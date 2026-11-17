@@ -1,0 +1,15 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Editors and IDEs
+.vscode/*
+!.vscode/extensions.json
+
+# Environment files and secrets. Commit .env.example with placeholders instead.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
