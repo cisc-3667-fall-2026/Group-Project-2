@@ -24,6 +24,7 @@ layout_mode = 2
 text = "Disease Origin Trivia"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=361001377]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=1459729062]
