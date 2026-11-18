@@ -1,9 +1,68 @@
 [gd_scene format=3 uid="uid://dp8yrofmda7r"]
 
-[node name="Instructions" type="Control" unique_id=1933155978]
+[ext_resource type="Script" uid="uid://b10jku4tvxgrc" path="res://scripts/Scene/Instructions.gd" id="1_instr"]
+
+[node name="Instructions" type="Control" unique_id=633711370]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_instr")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1380635838]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=534448142]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="InstructionsTitle" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1537339770]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "How to Play"
+horizontal_alignment = 1
+
+[node name="InstructionsText" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1791410744]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[b]Setup[/b]
+After the main menu, you will be prompted to enter the names of every player.
+Enter the names and confirm to begin the game.
+
+[b]The Game[/b]
+There are 5 rounds:
+1. Every round, you and the others will be shown the name of a disease.
+2. The objective is to determine where in the world the disease was first identified.
+3. You will take turns entering your answer by placing a pin on the map.
+- Before your turn, there will be a privacy screen with a confirmation prompt. Make sure no one else is looking so they don't cheat off of you!
+4. Pan and zoom around the map to get a precise placement for your pin.
+5. Confirm the pin's placement, and pass the device on to the next player on the screen.
+6. After every player has placed a pin, the location of the disease is revealed with a golden pin.
+7. Alongside the answer, an educational fact about the disease is revealed. Be sure to remember them to help you out later!
+
+[b]Scoring[/b]
+The closer your guess is to the disease's location, the more points you earn.
+
+[b]Winning[/b]
+Remain as precise as possible to gain the most points. The player(s) with the most points win!"
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=234211551]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
