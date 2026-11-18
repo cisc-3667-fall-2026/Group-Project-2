@@ -42,7 +42,8 @@ jobs:
       - name: Import project and fail on script errors
         run: |
           godot --headless --import 2>&1 | tee import.log
-          if grep -E "SCRIPT ERROR|Parse Error|ERROR:" import.log; then
+          # The container has no system fonts, so Godot always logs a fontconfig error.
+          if grep -E "SCRIPT ERROR|Parse Error|ERROR:" import.log | grep -v "Unable to load fontconfig"; then
             echo "Godot reported errors during import."
             exit 1
           fi
