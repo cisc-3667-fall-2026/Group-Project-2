@@ -17,9 +17,9 @@ func draw_player_list():
 		PlayerName.text = players[n].name
 		
 		if players[n].id == PlayerManager.player_selected:
-			PlayerName.label_settings = default_label
-		else:
 			PlayerName.label_settings = selected_label
+		else:
+			PlayerName.label_settings = default_label
 			
 		$Row.add_child(PlayerName)
 			
