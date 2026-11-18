@@ -84,18 +84,18 @@ layout_mode = 2
 visible = false
 layout_mode = 1
 
-[node name="Control" type="Control" parent="." unique_id=1723251151]
+[node name="PlayerList" type="Control" parent="." unique_id=1723251151]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_cpr0p")
 
-[node name="Row" type="GridContainer" parent="Control" unique_id=1496018112]
+[node name="Row" type="GridContainer" parent="PlayerList" unique_id=1496018112]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="PlayerName" type="Label" parent="Control/Row" unique_id=1595584354]
+[node name="PlayerName" type="Label" parent="PlayerList/Row" unique_id=1595584354]
 visible = false
 layout_mode = 2
 text = "Player"
