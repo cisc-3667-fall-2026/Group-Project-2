@@ -19,7 +19,7 @@ func draw_player_list():
 		
 		PlayerName.text = players[n].name + " " + (str(players[n].score) if show_score_for_players else "")
 		
-		if n == PlayerManager.player_selected and show_selected_player:
+		if n == PlayerManager.list_index and show_selected_player:
 			PlayerName.label_settings = selected_label
 		else:
 			PlayerName.label_settings = default_label
