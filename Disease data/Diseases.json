@@ -1,0 +1,442 @@
+[
+  {
+	"id": 1,
+	"name": "COVID-19",
+	"place": "Wuhan, China",
+	"year": "2019",
+	"locations": [
+	  {
+		"lat": 30.59,
+		"lon": 114.31,
+		"label": "Wuhan"
+	  }
+	],
+	"fact": "The first recognized cluster was reported in Wuhan in December 2019. COVID-19 is caused by SARS-CoV-2 and mainly spreads through respiratory particles."
+  },
+  {
+	"id": 2,
+	"name": "SARS",
+	"place": "Guangdong Province, China",
+	"year": "2002",
+	"locations": [
+	  {
+		"lat": 23.13,
+		"lon": 113.26,
+		"label": "Guangdong"
+	  }
+	],
+	"fact": "The first recognized SARS cases appeared in Guangdong in November 2002. The coronavirus later spread internationally during the 2003 outbreak."
+  },
+  {
+	"id": 3,
+	"name": "AIDS",
+	"place": "Los Angeles, USA",
+	"year": "1981",
+	"locations": [
+	  {
+		"lat": 34.05,
+		"lon": -118.24,
+		"label": "Los Angeles"
+	  }
+	],
+	"fact": "The first CDC report of cases later recognized as AIDS described five patients in Los Angeles. HIV was later identified as the cause of AIDS."
+  },
+  {
+	"id": 4,
+	"name": "Mpox",
+	"place": "Democratic Republic of the Congo",
+	"year": "1970",
+	"locations": [
+	  {
+		"lat": 1.23,
+		"lon": 19.8,
+		"label": "Basankusu, DRC"
+	  }
+	],
+	"fact": "The first reported human case was a nine-month-old boy in what was then Zaire. The virus had previously been discovered in research monkeys in 1958."
+  },
+  {
+	"id": 5,
+	"name": "Legionnaires' disease",
+	"place": "Philadelphia, USA",
+	"year": "1976",
+	"locations": [
+	  {
+		"lat": 39.95,
+		"lon": -75.17,
+		"label": "Philadelphia"
+	  }
+	],
+	"fact": "A major pneumonia outbreak occurred among people attending an American Legion convention. The illness was later linked to Legionella bacteria spread through contaminated water droplets."
+  },
+  {
+	"id": 6,
+	"name": "H5N1 avian influenza (human infection)",
+	"place": "Hong Kong",
+	"year": "1997",
+	"locations": [
+	  {
+		"lat": 22.32,
+		"lon": 114.17,
+		"label": "Hong Kong"
+	  }
+	],
+	"fact": "The first known human H5N1 infections occurred during a poultry outbreak. Eighteen people were infected and six died."
+  },
+  {
+	"id": 7,
+	"name": "Hantavirus pulmonary syndrome",
+	"place": "Four Corners region, USA",
+	"year": "1993",
+	"locations": [
+	  {
+		"lat": 37.0,
+		"lon": -109.05,
+		"label": "Four Corners"
+	  }
+	],
+	"fact": "A cluster of severe respiratory illness led to recognition of the syndrome. Infection is associated with exposure to infected rodent urine, droppings, or saliva."
+  },
+  {
+	"id": 8,
+	"name": "Chikungunya",
+	"place": "Tanzania",
+	"year": "1952",
+	"locations": [
+	  {
+		"lat": -10.95,
+		"lon": 39.28,
+		"label": "Makonde Plateau, Tanzania"
+	  }
+	],
+	"fact": "The virus was first identified during an outbreak in Tanzania. It is spread by mosquitoes and is especially known for causing severe joint pain."
+  },
+  {
+	"id": 9,
+	"name": "Respiratory syncytial virus (RSV)",
+	"place": "Baltimore, Maryland, USA",
+	"year": "1957",
+	"locations": [
+	  {
+		"lat": 39.29,
+		"lon": -76.61,
+		"label": "Baltimore"
+	  }
+	],
+	"fact": "Human RSV strains were isolated from infants with respiratory illness in Baltimore after a related virus had first been found in laboratory chimpanzees."
+  },
+  {
+	"id": 10,
+	"name": "Q fever",
+	"place": "Brisbane, Australia",
+	"year": "1935",
+	"locations": [
+	  {
+		"lat": -27.47,
+		"lon": 153.03,
+		"label": "Brisbane"
+	  }
+	],
+	"fact": "The disease was first investigated among slaughterhouse workers with an unexplained fever. The Q originally stood for 'query' because the cause was unknown."
+  },
+  {
+	"id": 11,
+	"name": "H7N9 avian influenza (human infection)",
+	"place": "Shanghai and Anhui, China",
+	"year": "2013",
+	"locations": [
+	  {
+		"lat": 31.23,
+		"lon": 121.47,
+		"label": "Shanghai"
+	  },
+	  {
+		"lat": 31.86,
+		"lon": 117.28,
+		"label": "Anhui (Hefei)"
+	  }
+	],
+	"fact": "China reported the first three known human H7N9 infections in 2013. Severe pneumonia was common, and live-bird exposure became an important concern."
+  },
+  {
+	"id": 12,
+	"name": "Rotavirus infection",
+	"place": "Melbourne, Australia",
+	"year": "1973",
+	"locations": [
+	  {
+		"lat": -37.81,
+		"lon": 144.96,
+		"label": "Melbourne"
+	  }
+	],
+	"fact": "Researchers identified rotavirus in children hospitalized with severe gastroenteritis. It later became recognized as a major cause of severe diarrhea in young children worldwide."
+  },
+  {
+	"id": 13,
+	"name": "Human metapneumovirus infection",
+	"place": "The Netherlands",
+	"year": "2001",
+	"locations": [
+	  {
+		"lat": 51.92,
+		"lon": 4.48,
+		"label": "Rotterdam"
+	  }
+	],
+	"fact": "Researchers identified the virus in children with respiratory illness. Later studies showed that the virus had actually been circulating in humans for decades."
+  },
+  {
+	"id": 14,
+	"name": "Variant Creutzfeldt-Jakob disease",
+	"place": "United Kingdom",
+	"year": "1996",
+	"locations": [
+	  {
+		"lat": 54.0,
+		"lon": -2.0,
+		"label": "United Kingdom"
+	  }
+	],
+	"fact": "This rare fatal prion disease was first reported in the United Kingdom and was linked to eating beef from cattle infected with bovine spongiform encephalopathy."
+  },
+  {
+	"id": 15,
+	"name": "Enterovirus A71 infection",
+	"place": "California, USA",
+	"year": "1969",
+	"locations": [
+	  {
+		"lat": 36.78,
+		"lon": -119.42,
+		"label": "California"
+	  }
+	],
+	"fact": "The virus was first identified in the United States. It is an important cause of hand, foot and mouth disease and can occasionally cause serious neurologic illness."
+  },
+  {
+	"id": 16,
+	"name": "Enterovirus D68 infection",
+	"place": "California, USA",
+	"year": "1962",
+	"locations": [
+	  {
+		"lat": 36.78,
+		"lon": -119.42,
+		"label": "California"
+	  }
+	],
+	"fact": "EV-D68 was first isolated from children with pneumonia and bronchiolitis. It usually causes respiratory illness but has also been associated with neurologic complications."
+  },
+  {
+	"id": 17,
+	"name": "Toxic shock syndrome",
+	"place": "Denver, Colorado, USA",
+	"year": "1978",
+	"locations": [
+	  {
+		"lat": 39.74,
+		"lon": -104.99,
+		"label": "Denver"
+	  }
+	],
+	"fact": "The syndrome was first described in children in Denver. It is caused by toxins produced by certain strains of Staphylococcus aureus or Streptococcus pyogenes."
+  },
+  {
+	"id": 18,
+	"name": "E. coli O157:H7 infection",
+	"place": "Oregon and Michigan, USA",
+	"year": "1982",
+	"locations": [
+	  {
+		"lat": 42.43,
+		"lon": -122.86,
+		"label": "Oregon (Medford area)"
+	  },
+	  {
+		"lat": 44.76,
+		"lon": -85.62,
+		"label": "Michigan (Traverse City)"
+	  }
+	],
+	"fact": "The pathogen was first recognized during two outbreaks linked to contaminated hamburgers. It can cause bloody diarrhea and hemolytic uremic syndrome."
+  },
+  {
+	"id": 19,
+	"name": "Helicobacter pylori infection",
+	"place": "Perth, Australia",
+	"year": "1982",
+	"locations": [
+	  {
+		"lat": -31.95,
+		"lon": 115.86,
+		"label": "Perth"
+	  }
+	],
+	"fact": "Robin Warren and Barry Marshall cultured the bacterium from the human stomach and showed its strong connection to gastritis and peptic ulcers."
+  },
+  {
+	"id": 20,
+	"name": "Parvovirus B19 infection",
+	"place": "London, United Kingdom",
+	"year": "1974",
+	"locations": [
+	  {
+		"lat": 51.51,
+		"lon": -0.13,
+		"label": "London"
+	  }
+	],
+	"fact": "The virus was discovered accidentally in a blood donor sample. Its name came from the sample label: number 19 in panel B."
+  },
+  {
+	"id": 21,
+	"name": "Severe fever with thrombocytopenia syndrome (SFTS)",
+	"place": "Henan and Hubei, China",
+	"year": "2009",
+	"locations": [
+	  {
+		"lat": 33.88,
+		"lon": 113.61,
+		"label": "Henan"
+	  },
+	  {
+		"lat": 30.97,
+		"lon": 112.27,
+		"label": "Hubei"
+	  }
+	],
+	"fact": "A novel tick-borne virus was identified after patients developed high fever and very low platelet counts. It can cause severe or fatal disease."
+  },
+  {
+	"id": 22,
+	"name": "Babesiosis",
+	"place": "Former Yugoslavia (now Croatia)",
+	"year": "1957",
+	"locations": [
+	  {
+		"lat": 45.81,
+		"lon": 15.98,
+		"label": "Zagreb, Croatia"
+	  }
+	],
+	"fact": "The first documented human case involved a patient without a spleen. Babesia parasites infect red blood cells and are usually transmitted by ticks."
+  },
+  {
+	"id": 23,
+	"name": "Human monocytic ehrlichiosis",
+	"place": "Arkansas, USA",
+	"year": "1986",
+	"locations": [
+	  {
+		"lat": 34.9,
+		"lon": -92.4,
+		"label": "Arkansas"
+	  }
+	],
+	"fact": "The first recognized U.S. case followed a tick bite in rural Arkansas. The infection can cause fever, headache, muscle aches, and low blood-cell counts."
+  },
+  {
+	"id": 24,
+	"name": "Anaplasmosis",
+	"place": "Minnesota and western Wisconsin, USA",
+	"year": "1993",
+	"locations": [
+	  {
+		"lat": 46.3,
+		"lon": -94.3,
+		"label": "Minnesota"
+	  },
+	  {
+		"lat": 44.8,
+		"lon": -91.5,
+		"label": "Western Wisconsin"
+	  }
+	],
+	"fact": "The disease was first recognized in patients from Minnesota and Wisconsin. It is transmitted by blacklegged ticks, the same ticks that can spread Lyme disease."
+  },
+  {
+	"id": 25,
+	"name": "Creutzfeldt-Jakob disease",
+	"place": "Germany",
+	"year": "1920-1921",
+	"locations": [
+	  {
+		"lat": 51.16,
+		"lon": 10.45,
+		"label": "Germany"
+	  }
+	],
+	"fact": "German neurologists Hans Gerhard Creutzfeldt and Alfons Maria Jakob described cases of the rare, rapidly progressive and fatal prion disease."
+  },
+  {
+	"id": 26,
+	"name": "Human bocavirus infection",
+	"place": "Sweden",
+	"year": "2005",
+	"locations": [
+	  {
+		"lat": 59.33,
+		"lon": 18.07,
+		"label": "Stockholm"
+	  }
+	],
+	"fact": "Swedish researchers discovered this parvovirus in respiratory samples from children. It is commonly detected in young children with respiratory illness."
+  },
+  {
+	"id": 27,
+	"name": "Kuru",
+	"place": "Eastern Highlands, Papua New Guinea",
+	"year": "1950s",
+	"locations": [
+	  {
+		"lat": -6.53,
+		"lon": 145.62,
+		"label": "Okapa, Eastern Highlands"
+	  }
+	],
+	"fact": "Kuru was documented among the Fore people and later shown to be a prion disease. Transmission was linked to traditional mortuary practices involving infected nervous tissue."
+  },
+  {
+	"id": 28,
+	"name": "Botulism",
+	"place": "Wuerttemberg, Germany",
+	"year": "1793",
+	"locations": [
+	  {
+		"lat": 48.78,
+		"lon": 9.18,
+		"label": "Württemberg (Stuttgart)"
+	  }
+	],
+	"fact": "A major outbreak of 'sausage poisoning' helped define the illness. The name botulism comes from the Latin word botulus, meaning sausage."
+  },
+  {
+	"id": 29,
+	"name": "Adenovirus infection",
+	"place": "Washington, D.C., USA",
+	"year": "1953",
+	"locations": [
+	  {
+		"lat": 38.91,
+		"lon": -77.04,
+		"label": "Washington, D.C."
+	  }
+	],
+	"fact": "Researchers first isolated adenoviruses from cultured adenoid tissue. The viruses can cause respiratory, eye, gastrointestinal, and urinary infections."
+  },
+  {
+	"id": 30,
+	"name": "Melioidosis",
+	"place": "Yangon, Myanmar",
+	"year": "1911",
+	"locations": [
+	  {
+		"lat": 16.84,
+		"lon": 96.17,
+		"label": "Yangon"
+	  }
+	],
+	"fact": "The disease was first described at Rangoon General Hospital. It is caused by Burkholderia pseudomallei, a bacterium found in soil and water in tropical regions."
+  }
+]
