@@ -17,11 +17,14 @@ func register_player(name: String):
 	
 	print("Registered " + player.name)
 	
-func select_player():
+func select_next_player():
 	list_index += 1
 	if (list_index > player_list.size() - 1): list_index = 0
 	
 	player_select_changed.emit()
+	
+func get_selected_player():
+	return player_list[list_index]
 
 func get_players():
 	return player_list
