@@ -25,6 +25,10 @@ window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[gui]
+
+theme/custom="uid://cpd3middaxh4l"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dp8yrofmda7r"]
 
+[ext_resource type="Script" uid="uid://d16pxs187hxb6" path="res://scenes/Instructions.gd" id="1_hjpx1"]
+
 [node name="Instructions" type="Control" unique_id=1933155978]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,46 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hjpx1")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=669251076]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=539849404]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1987367571]
+layout_mode = 2
+text = "How to play"
+
+[node name="RulesLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer" unique_id=224809095]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Goal:[/b] Score the most points by guessing where diseases were first identified.
+
+[b]Setup:[/b] Choose 2 to 6 players. Everyone plays on this one computer.
+
+[b]Each round:[/b]
+1. A disease is named, and each player takes a turn in order.
+2. When it's your turn, the others look away. Press [i]I'm ready[/i] and click the map where you think the disease was first identified.
+3. Your pin stays hidden until everyone has guessed.
+
+[b]Scoring:[/b] After everyone guesses, the real location appears in green. The closer your pin, the more points you get, up to 5,000 for a perfect guess.
+
+[b]Learn:[/b] After each round, read where and when the disease was first identified and how it spread.
+
+[b]Winning:[/b] After 5 rounds, the player with the most points wins."
+fit_content = true
+
+[node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=191153150]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
