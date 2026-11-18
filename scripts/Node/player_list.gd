@@ -18,7 +18,7 @@ func draw_player_list():
 		
 		PlayerName.text = players[n].name
 		
-		if players[n].id == PlayerManager.player_selected and show_selected_player:
+		if n == PlayerManager.player_selected and show_selected_player:
 			PlayerName.label_settings = selected_label
 		else:
 			PlayerName.label_settings = default_label
