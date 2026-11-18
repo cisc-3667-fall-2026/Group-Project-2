@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: GDScript lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install "gdtoolkit==4.*"
+      - run: gdlint scripts
+
+  data:
+    name: Disease data
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -I .github/scripts/validate_diseases.py
+
+  godot:
+    name: Godot import
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.7.2
+    steps:
+      - uses: actions/checkout@v4
+      # Importing compiles every script and registers autoloads.
+      # Godot can exit 0 even when a script fails to parse, so fail on the log text.
+      - name: Import project and fail on script errors
+        run: |
+          godot --headless --import 2>&1 | tee import.log
+          # The container has no system fonts, so Godot always logs a fontconfig error.
+          if grep -E "SCRIPT ERROR|Parse Error|ERROR:" import.log | grep -v "Unable to load fontconfig"; then
+            echo "Godot reported errors during import."
+            exit 1
+          fi
