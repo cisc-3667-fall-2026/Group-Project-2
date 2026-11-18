@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 [autoload]
 
 GameManager="*uid://boa5m0rlaj2kv"
+PlayerManager="*uid://cg5ieeawbt5j8"
 
 [display]
 
@@ -24,6 +25,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="Group Project 2"
 
 [physics]
 
