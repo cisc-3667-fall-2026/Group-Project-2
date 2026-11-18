@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cuk2vfmofktmu"]
 
 [ext_resource type="PackedScene" uid="uid://ditvvo03wuj8b" path="res://scenes/PrivacyScreen.tscn" id="1_ibkli"]
-[ext_resource type="Script" uid="uid://521u7h4j1pge" path="res://scenes/Game.gd" id="1_qbsmt"]
 [ext_resource type="Script" uid="uid://cyw8snu7rthj8" path="res://scripts/Node/player_list.gd" id="3_cpr0p"]
 
 [node name="Game" type="Control" unique_id=26081044]
@@ -11,7 +10,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qbsmt")
 
 [node name="Layout" type="HBoxContainer" parent="." unique_id=1302311391]
 layout_mode = 1
