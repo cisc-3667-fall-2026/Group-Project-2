@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cuns2xk3cic18"]
 
 [ext_resource type="Script" uid="uid://4ghqa2wlo8ie" path="res://scripts/Node/setup.gd" id="1_5j21s"]
+[ext_resource type="Script" uid="uid://cyw8snu7rthj8" path="res://scripts/Node/player_list.gd" id="2_uewku"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xrivr"]
 font_size = 32
@@ -67,6 +68,24 @@ text = "Add Player"
 [node name="ContinueButton" type="Button" parent="Control/Buttons" unique_id=2032187217]
 layout_mode = 2
 text = "Continue"
+
+[node name="PlayerList" type="Control" parent="." unique_id=455012572]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_uewku")
+show_selected_player = false
+
+[node name="Row" type="GridContainer" parent="PlayerList" unique_id=1709300043]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerName" type="Label" parent="PlayerList/Row" unique_id=958946771]
+visible = false
+layout_mode = 2
+text = "Player"
 
 [connection signal="pressed" from="Control/Buttons/AddButton" to="Control" method="_on_add_button_pressed"]
 [connection signal="pressed" from="Control/Buttons/ContinueButton" to="Control" method="_on_continue_button_pressed"]
