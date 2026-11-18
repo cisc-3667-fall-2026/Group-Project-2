@@ -84,3 +84,24 @@ layout_mode = 2
 [node name="PrivacyScreen" parent="." unique_id=1863913817 instance=ExtResource("1_ibkli")]
 visible = false
 layout_mode = 1
+
+[ext_resource type="Script" uid="uid://cyw8snu7rthj8" path="res://scripts/Node/player_list.gd" id="1_ibkli"]
+
+[node name="Game" type="Node2D" unique_id=403434093]
+
+[node name="Control" type="Control" parent="." unique_id=1723251151]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ibkli")
+
+[node name="Row" type="GridContainer" parent="Control" unique_id=1496018112]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerName" type="Label" parent="Control/Row" unique_id=1595584354]
+visible = false
+layout_mode = 2
+text = "Player"
