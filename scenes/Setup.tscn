@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cuns2xk3cic18"]
 
-[ext_resource type="Script" uid="uid://4ghqa2wlo8ie" path="res://scripts/Node/setup.gd" id="1_5j21s"]
+[ext_resource type="Script" uid="uid://4ghqa2wlo8ie" path="res://scripts/Scene/Setup.gd" id="1_5j21s"]
 [ext_resource type="Script" uid="uid://cyw8snu7rthj8" path="res://scripts/Node/player_list.gd" id="2_uewku"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xrivr"]
