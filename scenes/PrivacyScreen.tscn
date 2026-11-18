@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://ditvvo03wuj8b"]
 
+[ext_resource type="Script" uid="uid://bfjpdgclk4se3" path="res://scenes/PrivacyScreen.gd" id="1_f645m"]
+
 [node name="PrivacyScreen" type="Control" unique_id=1863913817]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,34 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_f645m")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1694345475]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06666667, 0.06666667, 0.06666667, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=911943692]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1145164910]
+layout_mode = 2
+
+[node name="TurnScreen" type="Label" parent="CenterContainer/VBoxContainer" unique_id=950517388]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="ReadyButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=197334367]
+unique_name_in_owner = true
+layout_mode = 2
+text = "I'm ready"
