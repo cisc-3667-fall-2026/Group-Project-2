@@ -28,7 +28,8 @@ offset_right = 277.5
 offset_bottom = -75.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Enter Players"
+text = "Enter Player Name
+(One Name Per Player)"
 label_settings = SubResource("LabelSettings_xrivr")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -67,7 +68,7 @@ text = "Add Player"
 
 [node name="ContinueButton" type="Button" parent="Control/Buttons" unique_id=2032187217]
 layout_mode = 2
-text = "Continue"
+text = "Finished"
 
 [node name="PlayerList" type="Control" parent="." unique_id=455012572]
 layout_mode = 3
