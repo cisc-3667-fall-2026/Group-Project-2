@@ -30,6 +30,10 @@ window/stretch/aspect="expand"
 
 project/assembly_name="Group Project 2"
 
+[gui]
+
+theme/custom="uid://cpd3middaxh4l"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
