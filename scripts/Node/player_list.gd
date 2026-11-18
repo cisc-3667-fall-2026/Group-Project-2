@@ -1,6 +1,7 @@
 extends Control
 
 @export var show_selected_player: bool = true
+@export var show_score_for_players: bool = true
 
 var players: Array[Player]
 var default_label = preload("res://assets/player_label_settings/default_label.tres")
@@ -16,7 +17,7 @@ func draw_player_list():
 	for n in PlayerManager.get_players().size():
 		var PlayerName = $Row/PlayerName.duplicate()
 		
-		PlayerName.text = players[n].name
+		PlayerName.text = players[n].name + " " + (str(players[n].score) if show_score_for_players else "")
 		
 		if n == PlayerManager.player_selected and show_selected_player:
 			PlayerName.label_settings = selected_label

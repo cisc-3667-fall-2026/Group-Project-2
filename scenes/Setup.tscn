@@ -76,6 +76,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_uewku")
 show_selected_player = false
+show_score_for_players = false
 
 [node name="Row" type="GridContainer" parent="PlayerList" unique_id=1709300043]
 layout_mode = 0
