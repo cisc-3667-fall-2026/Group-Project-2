@@ -9,8 +9,6 @@ func _ready() -> void:
 	text_box = $TextBox
 	add_button = $GridContainer/AddButton
 	continue_button = $GridContainer/ContinueButton
-	
-	pass # Replace with function body.
 
 func _on_add_button_pressed() -> void:
 	PlayerManager.register_player(text_box.text)
