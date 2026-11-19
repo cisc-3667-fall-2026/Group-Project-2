@@ -26,13 +26,13 @@ window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
-[gui]
-
-theme/custom="uid://cpd3middaxh4l"
-
 [dotnet]
 
 project/assembly_name="Group Project 2"
+
+[gui]
+
+theme/custom="uid://cpd3middaxh4l"
 
 [physics]
 

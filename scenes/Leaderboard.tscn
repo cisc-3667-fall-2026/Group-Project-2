@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cuq47qer1672g"]
 
-[ext_resource type="Script" uid="uid://dkpyosdkjcp53" path="res://Leaderboard.gd" id="1_n6nvk"]
+[ext_resource type="Script" uid="uid://dkpyosdkjcp53" path="res://scripts/Scene/Leaderboard.gd" id="1_n6nvk"]
 
 [node name="Leaderboard" type="Control" unique_id=747306692]
 layout_mode = 3
