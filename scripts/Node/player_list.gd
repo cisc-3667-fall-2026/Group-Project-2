@@ -8,6 +8,7 @@ var default_label = preload("res://assets/player_label_settings/default_label.tr
 var selected_label = preload("res://assets/player_label_settings/selected_label.tres")
 
 func draw_player_list():
+	players = PlayerManager.get_players()
 	var nodes = $Row.get_children()
 
 	# Redraw if we already drew them

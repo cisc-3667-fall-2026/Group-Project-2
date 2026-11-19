@@ -79,17 +79,21 @@ text = "Continue"
 
 [node name="PlayerList" type="Control" parent="." unique_id=455012572]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2_uewku")
 show_selected_player = false
 show_score_for_players = false
 
 [node name="Row" type="GridContainer" parent="PlayerList" unique_id=1709300043]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 300.0
+offset_top = 475.0
+offset_right = 340.0
+offset_bottom = 515.0
 
 [node name="PlayerName" type="Label" parent="PlayerList/Row" unique_id=958946771]
 visible = false
