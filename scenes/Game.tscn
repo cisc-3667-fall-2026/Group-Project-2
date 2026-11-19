@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cuk2vfmofktmu"]
 
 [ext_resource type="PackedScene" uid="uid://ditvvo03wuj8b" path="res://scenes/PrivacyScreen.tscn" id="1_ibkli"]
-[ext_resource type="Script" uid="uid://cyw8snu7rthj8" path="res://scripts/Node/player_list.gd" id="3_cpr0p"]
+[ext_resource type="Script" uid="uid://521u7h4j1pge" path="res://scripts/Scene/Game.gd" id="1_qbsmt"]
+[ext_resource type="Texture2D" uid="uid://cenv3u1klrha8" path="res://assets/graphics/Worldmap_location_NED_50m_20000-10027 (1).png" id="2_78awf"]
+[ext_resource type="Script" uid="uid://dgwdeco85y6e3" path="res://scripts/Node/pins.gd" id="3_s0nni"]
 
 [node name="Game" type="Control" unique_id=26081044]
 layout_mode = 3
@@ -10,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qbsmt")
 
 [node name="Layout" type="HBoxContainer" parent="." unique_id=1302311391]
 layout_mode = 1
@@ -36,13 +39,14 @@ layout_mode = 2
 size_flags_vertical = 3
 ratio = 2.0
 
-[node name="AddMapHere" type="TextureRect" parent="Layout/LeftSide/MapHolder" unique_id=1281773176]
+[node name="Map" type="TextureRect" parent="Layout/LeftSide/MapHolder" unique_id=1281773176]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
+texture = ExtResource("2_78awf")
 expand_mode = 1
 
-[node name="Pins" type="Control" parent="Layout/LeftSide/MapHolder/AddMapHere" unique_id=490372016]
+[node name="Pins" type="Control" parent="Layout/LeftSide/MapHolder/Map" unique_id=490372016]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -51,6 +55,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("3_s0nni")
 
 [node name="RevealPanel" type="PanelContainer" parent="Layout" unique_id=1140227619]
 unique_name_in_owner = true
@@ -83,19 +88,3 @@ layout_mode = 2
 [node name="PrivacyScreen" parent="." unique_id=1863913817 instance=ExtResource("1_ibkli")]
 visible = false
 layout_mode = 1
-
-[node name="PlayerList" type="Control" parent="." unique_id=1723251151]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("3_cpr0p")
-
-[node name="Row" type="GridContainer" parent="PlayerList" unique_id=1496018112]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PlayerName" type="Label" parent="PlayerList/Row" unique_id=1595584354]
-visible = false
-layout_mode = 2
-text = "Player"

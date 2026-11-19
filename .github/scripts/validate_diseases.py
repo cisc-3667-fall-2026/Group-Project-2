@@ -1,4 +1,4 @@
-"""Validate Disease data/Diseases.json against the design doc (Appendix A).
+"""Validate data/diseases.json against the design doc (Appendix A).
 
 Exit code 0 means the data is valid. Exit code 1 prints each problem found.
 """
@@ -7,7 +7,7 @@ import json
 import sys
 from pathlib import Path
 
-DATA_PATH = Path("Disease data/Diseases.json")
+DATA_PATH = Path("data/diseases.json")
 EXPECTED_COUNT = 30
 MULTI_ORIGIN_IDS = {11, 18, 21, 24}
 REQUIRED_TEXT_FIELDS = ("name", "place", "year", "fact")
