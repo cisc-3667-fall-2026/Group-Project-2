@@ -11,7 +11,9 @@ var accepting_clicks := false
 
 func _ready() -> void:
 	# Lets you test this scene directly with F6, without going through the menu.
-	if GameManager.scores.size() != GameManager.num_players:
+	if PlayerManager.get_players().size() <= 0:
+		PlayerManager.register_player("Player A")
+		PlayerManager.register_player("Player B")
 		GameManager.reset()
 
 	rounds = load_diseases()
@@ -39,12 +41,12 @@ func start_round() -> void:
 
 func show_turn_screen() -> void:
 	accepting_clicks = false
-	$PrivacyScreen.show_for(current_player + 1)
+	$PrivacyScreen.show_for(PlayerManager.list_index)
 
 
 # Called when PrivacyScreen sends its player_ready signal.
 func _on_player_ready() -> void:
-	%TurnLabel.text = "Player %d: click where you think it was first identified" % (current_player + 1)
+	%TurnLabel.text = "%s: click where you think it was first identified" % PlayerManager.get_players()[PlayerManager.list_index].name
 	accepting_clicks = true
 
 
@@ -58,11 +60,14 @@ func _on_map_gui_input(event: InputEvent) -> void:
 func place_guess(latlon: Vector2) -> void:
 	accepting_clicks = false
 	guesses.append(latlon)
-	current_player += 1
-	if current_player < GameManager.num_players:
+	if PlayerManager.list_index < PlayerManager.get_players().size() - 1:
+		PlayerManager.select_next_player()
 		show_turn_screen()
+		return
 	else:
 		reveal()
+		return
+	
 
 
 func reveal() -> void:
@@ -79,12 +84,12 @@ func reveal() -> void:
 		var answer := nearest_answer(guess, d)
 		var km: float = answer["km"]
 		var points := score_for(km)
-		GameManager.scores[i] += points
+		PlayerManager.get_players()[i].score += points
 
 		var color: Color = PLAYER_COLORS[i]
 		%Pins.add_line(guess, Vector2(answer["lat"], answer["lon"]), color)
 		%Pins.add_pin(guess.x, guess.y, color)
-		text += "[color=#%s]Player %d[/color]: %d km away, +%d points\n" % [color.to_html(false), i + 1, int(km), points]
+		text += "[color=#%s]%s[/color]: %d km away, +%d points\n" % [color.to_html(false), PlayerManager.get_players()[i].name, int(km), points]
 
 	text += "\n[b]Standings[/b]\n" + standings_text()
 	%ResultsLabel.text = text
@@ -97,6 +102,7 @@ func reveal() -> void:
 
 
 func _on_next_pressed() -> void:
+	PlayerManager.list_index = 0
 	round_idx += 1
 	if round_idx >= rounds.size():
 		get_tree().change_scene_to_file("res://scenes/Leaderboard.tscn")
@@ -136,12 +142,11 @@ func score_for(km: float) -> int:
 
 # Players sorted from highest score to lowest.
 func standings_text() -> String:
-	var order := range(GameManager.num_players)
-	order.sort_custom(func(a, b): return GameManager.scores[a] > GameManager.scores[b])
+	var order = PlayerManager.get_players()
+	order.sort_custom(func(a, b): return a.score > b.score)
 	var text := ""
 	for rank in order.size():
-		var p: int = order[rank]
-		text += "%d. Player %d: %d\n" % [rank + 1, p + 1, GameManager.scores[p]]
+		text += "%d. %s: %d\n" % [rank + 1, order[rank].name, order[rank].score]
 	return text
 
 
