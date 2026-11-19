@@ -1,6 +1,8 @@
 extends Control
 
-const PLAYER_COLORS := [Color.RED, Color.DODGER_BLUE, Color.ORANGE, Color.MAGENTA, Color.CYAN, Color.YELLOW]
+const PLAYER_COLORS := [
+	Color.RED, Color.DODGER_BLUE, Color.ORANGE, Color.MAGENTA, Color.CYAN, Color.YELLOW
+]
 
 var rounds: Array = []
 var round_idx := 0
@@ -29,7 +31,10 @@ func _ready() -> void:
 
 func start_round() -> void:
 	var d: Dictionary = rounds[round_idx]
-	%QuestionLabel.text = "Round %d of %d: Where was %s first identified?" % [round_idx + 1, rounds.size(), d["name"]]
+	%QuestionLabel.text = (
+		"Round %d of %d: Where was %s first identified?"
+		% [round_idx + 1, rounds.size(), d["name"]]
+	)
 	guesses.clear()
 	current_player = 0
 	%Pins.clear_all()
@@ -84,12 +89,18 @@ func reveal() -> void:
 		var color: Color = PLAYER_COLORS[i]
 		%Pins.add_line(guess, Vector2(answer["lat"], answer["lon"]), color)
 		%Pins.add_pin(guess.x, guess.y, color)
-		text += "[color=#%s]Player %d[/color]: %d km away, +%d points\n" % [color.to_html(false), i + 1, int(km), points]
+		text += (
+			"[color=#%s]Player %d[/color]: %d km away, +%d points\n"
+			% [color.to_html(false), i + 1, int(km), points]
+		)
 
 	text += "\n[b]Standings[/b]\n" + standings_text()
 	%ResultsLabel.text = text
 
-	%FactLabel.text = "[b]%s[/b]\nFirst identified: %s, %s\n\n%s" % [d["name"], d["place"], d["year"], d["fact"]]
+	%FactLabel.text = (
+		"[b]%s[/b]\nFirst identified: %s, %s\n\n%s"
+		% [d["name"], d["place"], d["year"], d["fact"]]
+	)
 
 	var last_round := round_idx == rounds.size() - 1
 	%NextButton.text = "See final results" if last_round else "Next round"
