@@ -67,10 +67,8 @@ func place_guess(latlon: Vector2) -> void:
 	if PlayerManager.list_index < PlayerManager.get_players().size() - 1:
 		PlayerManager.select_next_player()
 		show_turn_screen()
-		return
 	else:
 		reveal()
-		return
 
 func reveal() -> void:
 	%TurnLabel.text = "Results"
