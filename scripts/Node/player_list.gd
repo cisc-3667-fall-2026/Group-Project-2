@@ -15,6 +15,7 @@ func draw_player_list():
 		$Row.remove_child(nodes[n])
 
 	for n in PlayerManager.get_players().size():
+		players = PlayerManager.get_players()
 		var player_name = $Row/PlayerName.duplicate()
 
 		var score_text := str(players[n].score) if show_score_for_players else ""

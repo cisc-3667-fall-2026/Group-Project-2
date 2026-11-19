@@ -14,6 +14,7 @@ func _on_add_button_pressed() -> void:
 	# Prevent empty names or duplicate names from being added
 	if (text_box.text == ""): return
 	if (PlayerManager.has_player(text_box.text)): return
+	if PlayerManager.get_players().size() >= 6: return
 	PlayerManager.register_player(text_box.text)
 	text_box.text = "" # Clear after button is pressed
 
