@@ -17,7 +17,7 @@ func _ready() -> void:
 	var winners: PackedStringArray = []
 	for p in order.size():
 		if order[p].score == best.score:
-			winners.append("Player %d" % (p + 1))
+			winners.append("%s" % order[p].name)
 	if winners.size() == 1:
 		%WinnerLabel.text = "%s wins!" % winners[0]
 	else:
