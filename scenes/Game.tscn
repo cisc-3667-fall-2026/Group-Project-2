@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ditvvo03wuj8b" path="res://scenes/PrivacyScreen.tscn" id="1_ibkli"]
 [ext_resource type="Script" uid="uid://521u7h4j1pge" path="res://scripts/Scene/Game.gd" id="1_qbsmt"]
 [ext_resource type="Texture2D" uid="uid://cenv3u1klrha8" path="res://assets/graphics/Worldmap_location_NED_50m_20000-10027 (1).png" id="2_78awf"]
-[ext_resource type="Script" uid="uid://dgwdeco85y6e3" path="res://scripts/Node/pins.gd" id="3_s0nni"]
+[ext_resource type="Script" uid="uid://dgwdeco85y6e3" path="res://scripts/Scene/Pins.gd" id="3_s0nni"]
 
 [node name="Game" type="Control" unique_id=26081044]
 layout_mode = 3
@@ -29,6 +29,7 @@ size_flags_horizontal = 3
 [node name="QuestionLabel" type="Label" parent="Layout/LeftSide" unique_id=519506714]
 unique_name_in_owner = true
 layout_mode = 2
+autowrap_mode = 3
 
 [node name="TurnLabel" type="Label" parent="Layout/LeftSide" unique_id=820849172]
 unique_name_in_owner = true
@@ -59,7 +60,6 @@ script = ExtResource("3_s0nni")
 
 [node name="RevealPanel" type="PanelContainer" parent="Layout" unique_id=1140227619]
 unique_name_in_owner = true
-visible = false
 custom_minimum_size = Vector2(420, 0)
 layout_mode = 2
 
@@ -75,15 +75,23 @@ fit_content = true
 [node name="HSeparator" type="HSeparator" parent="Layout/RevealPanel/VBoxContainer" unique_id=1111184195]
 layout_mode = 2
 
-[node name="FactLabel" type="RichTextLabel" parent="Layout/RevealPanel/VBoxContainer" unique_id=2008490876]
+[node name="ScrollContainer" type="ScrollContainer" parent="Layout/RevealPanel/VBoxContainer" unique_id=94651608]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FactLabel" type="RichTextLabel" parent="Layout/RevealPanel/VBoxContainer/ScrollContainer" unique_id=2008490876]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 bbcode_enabled = true
 fit_content = true
 
 [node name="NextButton" type="Button" parent="Layout/RevealPanel/VBoxContainer" unique_id=1399167317]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 8
 
 [node name="PrivacyScreen" parent="." unique_id=1863913817 instance=ExtResource("1_ibkli")]
 visible = false
