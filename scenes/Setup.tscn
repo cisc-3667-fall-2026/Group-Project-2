@@ -65,6 +65,10 @@ grow_vertical = 2
 layout_mode = 2
 text = "Add Player"
 
+[node name="ResetButton" type="Button" parent="Control/Buttons" unique_id=41441396]
+layout_mode = 2
+text = "Clear Players"
+
 [node name="ContinueButton" type="Button" parent="Control/Buttons" unique_id=2032187217]
 layout_mode = 2
 text = "Continue"
@@ -90,4 +94,5 @@ text = "Player"
 
 [connection signal="text_set" from="Control/TextBox" to="Control" method="_on_text_box_text_set"]
 [connection signal="pressed" from="Control/Buttons/AddButton" to="Control" method="_on_add_button_pressed"]
+[connection signal="pressed" from="Control/Buttons/ResetButton" to="Control" method="_on_reset_button_pressed"]
 [connection signal="pressed" from="Control/Buttons/ContinueButton" to="Control" method="_on_continue_button_pressed"]

@@ -22,6 +22,16 @@ func select_next_player():
 	if (list_index > player_list.size() - 1): list_index = 0
 
 	player_select_changed.emit()
+	
+func clear_players():
+	player_list = []
+	player_select_changed.emit()
+	
+func has_player(name: String):
+	for n in range(player_list.size()):
+		if player_list[n].name == name: return true
+		
+	return false
 
 func get_selected_player():
 	return player_list[list_index]
