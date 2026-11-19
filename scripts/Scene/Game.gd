@@ -1,6 +1,8 @@
 extends Control
 
-const PLAYER_COLORS := [Color.RED, Color.DODGER_BLUE, Color.ORANGE, Color.MAGENTA, Color.CYAN, Color.YELLOW]
+const PLAYER_COLORS := [
+	Color.RED, Color.DODGER_BLUE, Color.ORANGE, Color.MAGENTA, Color.CYAN, Color.YELLOW
+]
 
 var rounds: Array = []
 var round_idx := 0
@@ -31,7 +33,10 @@ func _ready() -> void:
 
 func start_round() -> void:
 	var d: Dictionary = rounds[round_idx]
-	%QuestionLabel.text = "Round %d of %d: Where was %s first identified?" % [round_idx + 1, rounds.size(), d["name"]]
+	%QuestionLabel.text = (
+		"Round %d of %d: Where was %s first identified?"
+		% [round_idx + 1, rounds.size(), d["name"]]
+	)
 	guesses.clear()
 	current_player = 0
 	%Pins.clear_all()
@@ -42,7 +47,6 @@ func start_round() -> void:
 func show_turn_screen() -> void:
 	accepting_clicks = false
 	$PrivacyScreen.show_for(PlayerManager.list_index)
-
 
 # Called when PrivacyScreen sends its player_ready signal.
 func _on_player_ready() -> void:
@@ -67,8 +71,6 @@ func place_guess(latlon: Vector2) -> void:
 	else:
 		reveal()
 		return
-	
-
 
 func reveal() -> void:
 	%TurnLabel.text = "Results"
@@ -94,7 +96,10 @@ func reveal() -> void:
 	text += "\n[b]Standings[/b]\n" + standings_text()
 	%ResultsLabel.text = text
 
-	%FactLabel.text = "[b]%s[/b]\nFirst identified: %s, %s\n\n%s" % [d["name"], d["place"], d["year"], d["fact"]]
+	%FactLabel.text = (
+		"[b]%s[/b]\nFirst identified: %s, %s\n\n%s"
+		% [d["name"], d["place"], d["year"], d["fact"]]
+	)
 
 	var last_round := round_idx == rounds.size() - 1
 	%NextButton.text = "See final results" if last_round else "Next round"
