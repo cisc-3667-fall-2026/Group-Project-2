@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://0tht3lmqq2oi"]
 
-[ext_resource type="Script" uid="uid://8ldhyu55s28h" path="res://scenes/MainMenu.gd" id="1_yqorp"]
+[ext_resource type="Script" uid="uid://8ldhyu55s28h" path="res://scripts/Scene/MainMenu.gd" id="1_yqorp"]
 
 [node name="MainMenu" type="Control" unique_id=1641250398]
 layout_mode = 3
@@ -29,6 +29,7 @@ text = "Disease Origin Trivia"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=361001377]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 16
 
