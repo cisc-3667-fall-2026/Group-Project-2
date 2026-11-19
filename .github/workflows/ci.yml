@@ -47,3 +47,16 @@ jobs:
             echo "Godot reported errors during import."
             exit 1
           fi
+      # Import only parses scripts that a scene or class registration uses.
+      # Check every script directly so an unused broken script still fails.
+      - name: Check every script for parse errors
+        run: |
+          failed=0
+          for script in $(find scripts -name '*.gd'); do
+            if ! output=$(godot --headless --check-only --script "res://$script" 2>&1); then
+              echo "::error file=$script::Godot could not parse this script"
+              echo "$output" | grep -v "fontconfig"
+              failed=1
+            fi
+          done
+          exit $failed
