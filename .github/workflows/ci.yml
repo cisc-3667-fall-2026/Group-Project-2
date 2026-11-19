@@ -47,3 +47,21 @@ jobs:
             echo "Godot reported errors during import."
             exit 1
           fi
+      # Import only parses scripts that a scene or class registration uses.
+      # Check every script directly so an unused broken script still fails.
+      # Godot loads each script alone, so autoload names (read from project.godot)
+      # are undefined there. Ignore only "Identifier not found" errors for them.
+      - name: Check every script for parse errors
+        run: |
+          autoloads=$(sed -n '/^\[autoload\]/,/^\[/p' project.godot | grep -oE '^[A-Za-z_][A-Za-z0-9_]*=' | tr -d '=' | paste -sd'|')
+          failed=0
+          for script in $(find scripts -name '*.gd'); do
+            output=$(godot --headless --check-only --script "res://$script" 2>&1 || true)
+            errors=$(echo "$output" | grep "SCRIPT ERROR" | grep -Ev "Identifier not found: ($autoloads)([^A-Za-z0-9_]|$)" || true)
+            if [ -n "$errors" ]; then
+              echo "::error file=$script::Godot could not parse this script"
+              echo "$errors"
+              failed=1
+            fi
+          done
+          exit $failed
