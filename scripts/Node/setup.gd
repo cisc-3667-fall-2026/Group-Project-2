@@ -6,9 +6,9 @@ var continue_button: Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	text_box = $TextBox
-	add_button = $GridContainer/AddButton
-	continue_button = $GridContainer/ContinueButton
+	text_box = $/root/Setup/Control/TextBox
+	add_button = $/root/Setup/Control/Buttons/AddButton
+	continue_button = $/root/Setup/Control/Buttons/ContinueButton
 
 func _on_add_button_pressed() -> void:
 	PlayerManager.register_player(text_box.text)

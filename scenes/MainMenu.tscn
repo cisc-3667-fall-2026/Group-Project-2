@@ -54,3 +54,5 @@ text = "Start Game"
 unique_name_in_owner = true
 layout_mode = 2
 text = "How to play"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HowToPlayButton" to="." method="_on_how_to_play_pressed"]
