@@ -37,7 +37,7 @@ text = "[b]Goal:[/b] Score the most points by guessing where diseases were first
 [b]Each round:[/b]
 1. A disease is named, and each player takes a turn in order.
 2. When it's your turn, the others look away. Press [i]I'm ready[/i] and click the map where you think the disease was first identified.
-3. Your pin stays hidden until everyone has guessed.
+3. Click again to move your pin. Press Confirm guess to finish your turn. Everyone sees the guesses after the last player confirms.
 
 [b]Scoring:[/b] After everyone guesses, the real location appears in green. The closer your pin, the more points you get, up to 5,000 for a perfect guess.
 
@@ -80,11 +80,11 @@ Enter the names and confirm to begin the game.
 There are 5 rounds:
 1. Every round, you and the others will be shown the name of a disease.
 2. The objective is to determine where in the world the disease was first identified.
-3. You will take turns entering your answer by placing a pin on the map.
+3. You will take turns entering your answer by clicking to place a pin on the map.
 - Before your turn, there will be a privacy screen with a confirmation prompt. Make sure no one else is looking so they don't cheat off of you!
-4. Pan and zoom around the map to get a precise placement for your pin.
-5. Confirm the pin's placement, and pass the device on to the next player on the screen.
-6. After every player has placed a pin, the location of the disease is revealed with a golden pin.
+4. Drag to pan and scroll to zoom. Click again to move your pin.
+5. Press Confirm guess to finish your turn, then pass the device to the next player.
+6. After the last player confirms, everyone sees the guesses and the correct location in green.
 7. Alongside the answer, an educational fact about the disease is revealed. Be sure to remember them to help you out later!
 
 [b]Scoring[/b]

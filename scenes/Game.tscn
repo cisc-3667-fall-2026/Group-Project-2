@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ditvvo03wuj8b" path="res://scenes/PrivacyScreen.tscn" id="1_ibkli"]
 [ext_resource type="Script" uid="uid://521u7h4j1pge" path="res://scripts/Scene/Game.gd" id="1_qbsmt"]
 [ext_resource type="Texture2D" uid="uid://cenv3u1klrha8" path="res://assets/graphics/Worldmap_location_NED_50m_20000-10027 (1).png" id="2_78awf"]
-[ext_resource type="Script" uid="uid://dgwdeco85y6e3" path="res://scripts/Scene/Pins.gd" id="3_s0nni"]
+[ext_resource type="Script" uid="uid://b3x5agk6qv2hm" path="res://scripts/Node/pins.gd" id="3_s0nni"]
 [ext_resource type="Script" uid="uid://cmuco818s33c1" path="res://scripts/Node/map_view.gd" id="4_view"]
 
 [node name="Game" type="Control" unique_id=26081044]
@@ -64,6 +64,21 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("3_s0nni")
+
+[node name="ConfirmButton" type="Button" parent="Layout/LeftSide/MapHolder/MapViewport"]
+unique_name_in_owner = true
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -72.0
+offset_right = 110.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Confirm guess"
 
 [node name="RevealPanel" type="PanelContainer" parent="Layout" unique_id=1140227619]
 unique_name_in_owner = true
