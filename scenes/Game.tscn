@@ -3,7 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://ditvvo03wuj8b" path="res://scenes/PrivacyScreen.tscn" id="1_ibkli"]
 [ext_resource type="Script" uid="uid://521u7h4j1pge" path="res://scripts/Scene/Game.gd" id="1_qbsmt"]
 [ext_resource type="Texture2D" uid="uid://cenv3u1klrha8" path="res://assets/graphics/Worldmap_location_NED_50m_20000-10027 (1).png" id="2_78awf"]
-[ext_resource type="Script" uid="uid://dgwdeco85y6e3" path="res://scripts/Node/pins.gd" id="3_s0nni"]
+[ext_resource type="Script" uid="uid://dgwdeco85y6e3" path="res://scripts/Scene/Pins.gd" id="3_s0nni"]
+[ext_resource type="Script" uid="uid://cmuco818s33c1" path="res://scripts/Node/map_view.gd" id="4_view"]
 
 [node name="Game" type="Control" unique_id=26081044]
 layout_mode = 3
@@ -39,14 +40,21 @@ layout_mode = 2
 size_flags_vertical = 3
 ratio = 2.0
 
-[node name="Map" type="TextureRect" parent="Layout/LeftSide/MapHolder" unique_id=1281773176]
+[node name="MapViewport" type="Control" parent="Layout/LeftSide/MapHolder" unique_id=808722279]
 unique_name_in_owner = true
+clip_contents = true
 layout_mode = 2
-mouse_filter = 0
+script = ExtResource("4_view")
+
+[node name="Map" type="TextureRect" parent="Layout/LeftSide/MapHolder/MapViewport" unique_id=1281773176]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 0
+mouse_filter = 2
 texture = ExtResource("2_78awf")
 expand_mode = 1
 
-[node name="Pins" type="Control" parent="Layout/LeftSide/MapHolder/Map" unique_id=490372016]
+[node name="Pins" type="Control" parent="Layout/LeftSide/MapHolder/MapViewport/Map" unique_id=490372016]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
