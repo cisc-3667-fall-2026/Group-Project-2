@@ -23,6 +23,7 @@ func _ready() -> void:
 		return
 	
 	%MapViewport.map_clicked.connect(_on_map_clicked)
+	%ConfirmButton.pressed.connect(_on_confirm_pressed)
 	$PrivacyScreen.player_ready.connect(_on_player_ready)
 	%NextButton.pressed.connect(_on_next_pressed)
 	start_round()
@@ -48,18 +49,24 @@ func show_turn_screen() -> void:
 
 # Called when PrivacyScreen sends its player_ready signal.
 func _on_player_ready() -> void:
-	%TurnLabel.text = "%s: click where you think it was first identified" % PlayerManager.get_players()[PlayerManager.list_index].name
+	var player_name = PlayerManager.get_players()[PlayerManager.list_index].name
+	%TurnLabel.text = "%s: Click where you think it was first identified | Drag to pan | Scroll to zoom | Confirm when ready!" % player_name
 	%MapViewport.input_enabled = true
 	accepting_clicks = true
 
 func _on_map_clicked(coordinates: Vector2) -> void:
-	if accepting_clicks:
-		place_guess(pixel_to_latlon(coordinates))
+	if not accepting_clicks:
+		return
+	%Pins.show_preview(pixel_to_latlon(coordinates), PLAYER_COLORS[PlayerManager.list_index])
+	%ConfirmButton.show()
 
-func place_guess(coordinates: Vector2) -> void:
+func _on_confirm_pressed() -> void:
+	if not accepting_clicks or %Pins.preview_location == null:
+		return
 	accepting_clicks = false
-	
-	guesses.append(coordinates)
+	guesses.append(%Pins.preview_location)
+	%Pins.clear_preview()
+	%ConfirmButton.hide()
 	
 	if PlayerManager.list_index < PlayerManager.get_players().size() - 1:
 		PlayerManager.select_next_player()
