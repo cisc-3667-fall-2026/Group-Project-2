@@ -25,7 +25,7 @@ alignment = 1
 
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1690906016]
 layout_mode = 2
-text = "Disease Origin Trivia"
+text = "Pathogen Pursuit"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=361001377]
