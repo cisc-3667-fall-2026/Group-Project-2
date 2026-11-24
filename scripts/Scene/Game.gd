@@ -36,6 +36,10 @@ func start_round() -> void:
 		"Round %d of %d: Where was %s first identified?"
 		% [round_idx + 1, rounds.size(), d["name"]]
 	)
+	%FactLabel.text = (
+		"Discovered in %s. %s"
+		% [d["year"], d["fact"]]
+	)
 	guesses.clear()
 	current_player = 0
 	%Pins.clear_all()
@@ -98,11 +102,6 @@ func reveal() -> void:
 	
 	text += "\n[b]Standings[/b]\n" + standings_text()
 	%ResultsLabel.text = text
-	
-	%FactLabel.text = (
-		"[b]%s[/b]\nFirst identified: %s, %s\n\n%s"
-		% [d["name"], d["place"], d["year"], d["fact"]]
-	)
 	
 	var last_round := round_idx == rounds.size() - 1
 	%NextButton.text = "See final results" if last_round else "Next round"
