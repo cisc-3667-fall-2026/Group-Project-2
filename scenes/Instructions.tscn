@@ -1,34 +1,33 @@
 [gd_scene format=3 uid="uid://dp8yrofmda7r"]
 
-[ext_resource type="Script" uid="uid://d16pxs187hxb6" path="res://scenes/Instructions.gd" id="1_hjpx1"]
+[ext_resource type="Script" uid="uid://b10jku4tvxgrc" path="res://scripts/Scene/Instructions.gd" id="1_instr"]
 
-[node name="Instructions" type="Control" unique_id=1933155978]
+[node name="Instructions" type="Control" unique_id=633711370]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hjpx1")
+script = ExtResource("1_instr")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=669251076]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+visible = false
+layout_mode = 0
+script = ExtResource("1_instr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=539849404]
 custom_minimum_size = Vector2(900, 0)
 layout_mode = 2
 
 [node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1987367571]
+visible = false
 layout_mode = 2
 text = "How to play"
 
 [node name="RulesLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer" unique_id=224809095]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 bbcode_enabled = true
 text = "[b]Goal:[/b] Score the most points by guessing where diseases were first identified.
@@ -38,7 +37,7 @@ text = "[b]Goal:[/b] Score the most points by guessing where diseases were first
 [b]Each round:[/b]
 1. A disease is named, and each player takes a turn in order.
 2. When it's your turn, the others look away. Press [i]I'm ready[/i] and click the map where you think the disease was first identified.
-3. Your pin stays hidden until everyone has guessed.
+3. Click again to move your pin. Press Confirm guess to finish your turn. Everyone sees the guesses after the last player confirms.
 
 [b]Scoring:[/b] After everyone guesses, the real location appears in green. The closer your pin, the more points you get, up to 5,000 for a perfect guess.
 
@@ -48,7 +47,56 @@ text = "[b]Goal:[/b] Score the most points by guessing where diseases were first
 fit_content = true
 
 [node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=191153150]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1380635838]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=534448142]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="InstructionsTitle" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1537339770]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "How to Play"
+horizontal_alignment = 1
+
+[node name="InstructionsText" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1791410744]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[b]Setup[/b]
+After the main menu, you will be prompted to enter the names of every player.
+Enter the names and confirm to begin the game.
+
+[b]The Game[/b]
+There are 5 rounds:
+1. Every round, you and the others will be shown the name of a disease.
+2. The objective is to determine where in the world the disease was first identified.
+3. You will take turns entering your answer by clicking to place a pin on the map.
+- Before your turn, there will be a privacy screen with a confirmation prompt. Make sure no one else is looking so they don't cheat off of you!
+4. Drag to pan and scroll to zoom. Click again to move your pin.
+5. Press Confirm guess to finish your turn, then pass the device to the next player.
+6. After the last player confirms, everyone sees the guesses and the correct location in green.
+7. Alongside the answer, an educational fact about the disease is revealed. Be sure to remember them to help you out later!
+
+[b]Scoring[/b]
+The closer your guess is to the disease's location, the more points you earn.
+
+[b]Winning[/b]
+Remain as precise as possible to gain the most points. The player(s) with the most points win!"
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=234211551]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Back"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

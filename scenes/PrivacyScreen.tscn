@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ditvvo03wuj8b"]
 
-[ext_resource type="Script" uid="uid://bfjpdgclk4se3" path="res://scenes/PrivacyScreen.gd" id="1_f645m"]
+[ext_resource type="Script" uid="uid://bfjpdgclk4se3" path="res://scripts/Scene/PrivacyScreen.gd" id="1_f645m"]
 
 [node name="PrivacyScreen" type="Control" unique_id=1863913817]
 layout_mode = 3

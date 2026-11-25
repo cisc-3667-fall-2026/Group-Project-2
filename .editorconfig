@@ -10,6 +10,10 @@ trim_trailing_whitespace = true
 indent_style = space
 indent_size = 2
 
+[*.gd]
+# Godot's editor and gdformat indent GDScript with tabs.
+indent_style = tab
+
 [*.md]
 # Two trailing spaces are a Markdown line break.
 trim_trailing_whitespace = false
