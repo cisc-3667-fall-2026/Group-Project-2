@@ -15,6 +15,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qbsmt")
 
+[node name="MapBackground" type="ColorRect" parent="." unique_id=458251058]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.7764706, 0.9254902, 1, 1)
+
 [node name="Layout" type="HBoxContainer" parent="." unique_id=1302311391]
 layout_mode = 1
 anchors_preset = 15
