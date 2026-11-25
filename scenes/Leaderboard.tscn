@@ -37,4 +37,4 @@ fit_content = true
 [node name="PlayAgainButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=2054538635]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Play Again"
+text = "Main Menu"
