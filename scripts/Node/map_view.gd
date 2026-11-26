@@ -21,7 +21,7 @@ func _ready() -> void:
 
 func reset_view(enable_input: bool) -> void:
 	_cancel_press()
-	
+
 	input_enabled = enable_input
 	zoom = 1.0
 	map.position = Vector2.ZERO
@@ -33,12 +33,12 @@ func _cancel_press() -> void:
 
 func _resize_map() -> void:
 	var center := Vector2(0.5, 0.5)
-	
+
 	if map.size.x > 0 and map.size.y > 0:
 		center = (map.size / zoom / 2.0 - map.position) / map.size
-	
+
 	map.size = size * zoom
-	
+
 	_move_map(size / 2.0 - center * map.size)
 
 func _move_map(target: Vector2) -> void:
@@ -46,12 +46,12 @@ func _move_map(target: Vector2) -> void:
 
 func _zoom_at(pointer: Vector2, steps: float) -> void:
 	_cancel_press()
-	
+
 	var next_zoom := clampf(zoom * pow(ZOOM_STEP, steps), 1.0, 2.0)
 	var target := pointer - (pointer - map.position) * (next_zoom / zoom)
 	zoom = next_zoom
 	map.size = size * zoom
-	
+
 	_move_map(target)
 
 func _gui_input(event: InputEvent) -> void:
@@ -73,7 +73,7 @@ func _gui_input(event: InputEvent) -> void:
 
 func _handle_left_button(event: InputEventMouseButton) -> void:
 	var inside := Rect2(Vector2.ZERO, size).has_point(event.position)
-	
+
 	if event.pressed:
 		held = inside
 		dragging = false
@@ -81,20 +81,20 @@ func _handle_left_button(event: InputEventMouseButton) -> void:
 		previous_position = event.position
 	elif held:
 		_update_drag(event.position)
-		
+
 		var clicked := inside and not dragging
-		
+
 		_cancel_press()
-		
+
 		if clicked:
 			map_clicked.emit(event.position - map.position)
 
 func _update_drag(pointer: Vector2) -> void:
 	var screen_delta := get_screen_transform().basis_xform(pointer - press_position)
-	
+
 	if screen_delta.length() >= DRAG_THRESHOLD:
 		dragging = true
 	if dragging:
 		_move_map(map.position + pointer - previous_position)
-		
+
 		previous_position = pointer
