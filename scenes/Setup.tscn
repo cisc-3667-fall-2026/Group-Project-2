@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://cuns2xk3cic18"]
 
 [ext_resource type="Script" uid="uid://4ghqa2wlo8ie" path="res://scripts/Node/setup.gd" id="1_5j21s"]
+[ext_resource type="Texture2D" uid="uid://b5wr4hj5q5vis" path="res://assets/graphics/virus_background_pattern.png" id="2_dhhc8"]
 [ext_resource type="Script" uid="uid://cyw8snu7rthj8" path="res://scripts/Node/player_list.gd" id="2_uewku"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xrivr"]
-font_size = 32
+font_size = 42
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Setup" type="Node2D" unique_id=129714507]
 
@@ -14,6 +17,18 @@ anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 script = ExtResource("1_5j21s")
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=2024370853]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_dhhc8")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="InstructionLabel" type="Label" parent="Control" unique_id=105227047]
 layout_mode = 1
@@ -46,6 +61,7 @@ offset_right = 383.0
 offset_bottom = 44.0625
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 32
 
 [node name="Buttons" type="HBoxContainer" parent="Control" unique_id=1888878633]
 layout_mode = 1
@@ -90,6 +106,7 @@ offset_bottom = 40.0
 [node name="PlayerName" type="Label" parent="PlayerList/Row" unique_id=958946771]
 visible = false
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "Player"
 
 [connection signal="text_set" from="Control/TextBox" to="Control" method="_on_text_box_text_set"]

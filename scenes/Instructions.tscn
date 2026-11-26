@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dp8yrofmda7r"]
 
 [ext_resource type="Script" uid="uid://b10jku4tvxgrc" path="res://scripts/Scene/Instructions.gd" id="1_instr"]
+[ext_resource type="Texture2D" uid="uid://b5wr4hj5q5vis" path="res://assets/graphics/virus_background_pattern.png" id="2_01vkm"]
 
 [node name="Instructions" type="Control" unique_id=633711370]
 layout_mode = 3
@@ -10,6 +11,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_instr")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=907648777]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_01vkm")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=669251076]
 visible = false
@@ -56,6 +69,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=534448142]
 layout_mode = 2
@@ -71,12 +85,14 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/shadow_outline_size = 10
+theme_override_constants/outline_size = 20
 bbcode_enabled = true
-text = "[b]Setup[/b]
+text = "[b]Setup
 After the main menu, you will be prompted to enter the names of every player.
 Enter the names and confirm to begin the game.
 
-[b]The Game[/b]
+The Game
 There are 5 rounds:
 1. Every round, you and the others will be shown the name of a disease.
 2. The objective is to determine where in the world the disease was first identified.
@@ -87,11 +103,11 @@ There are 5 rounds:
 6. After the last player confirms, everyone sees the guesses and the correct location in green.
 7. Alongside the answer, an educational fact about the disease is revealed. Be sure to remember them to help you out later!
 
-[b]Scoring[/b]
+Scoring
 The closer your guess is to the disease's location, the more points you earn.
 
-[b]Winning[/b]
-Remain as precise as possible to gain the most points. The player(s) with the most points win!"
+Winning
+Remain as precise as possible to gain the most points. The player(s) with the most points win![/b]"
 
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=234211551]
 unique_name_in_owner = true

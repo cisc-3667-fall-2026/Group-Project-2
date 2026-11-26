@@ -1,7 +1,7 @@
 extends Control
 
 func _ready() -> void:
-	%PlayAgainButton.pressed.connect(_on_play_again_pressed)
+	%MainMenuButton.pressed.connect(_on_play_again_pressed)
 
 	# Sort players from highest to lowest score.
 	var order = PlayerManager.get_players()

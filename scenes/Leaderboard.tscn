@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cuq47qer1672g"]
 
 [ext_resource type="Script" uid="uid://dkpyosdkjcp53" path="res://scripts/Scene/Leaderboard.gd" id="1_n6nvk"]
+[ext_resource type="Texture2D" uid="uid://b5wr4hj5q5vis" path="res://assets/graphics/virus_background_pattern.png" id="2_bnibd"]
 
 [node name="Leaderboard" type="Control" unique_id=747306692]
 layout_mode = 3
@@ -10,6 +11,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n6nvk")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=529668683]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_bnibd")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=892767094]
 layout_mode = 1
@@ -26,15 +39,21 @@ layout_mode = 2
 [node name="WinnerLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=553745598]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 36
 horizontal_alignment = 1
 
 [node name="ResultsLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer" unique_id=1195193762]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
 fit_content = true
 
-[node name="PlayAgainButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=2054538635]
+[node name="MainMenuButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=2054538635]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Main Menu"
